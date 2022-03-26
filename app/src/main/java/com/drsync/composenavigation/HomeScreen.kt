@@ -27,9 +27,14 @@ fun HomeScreen(navController: NavController) {
             modifier = Modifier.clickable {
                 navController.navigate(
                     route = Screen.Detail.passNameAndId(
-                        10,
-                        "Benny Fajri"
+                        id = 69
                     )
+
+                    /** REQUIRED ARGUMENTS */
+//                    route = Screen.Detail.passNameAndId(
+//                        10,
+//                        "Benny Fajri"
+//                    )
                 )
             }
         )
