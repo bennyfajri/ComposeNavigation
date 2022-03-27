@@ -1,4 +1,4 @@
-package com.drsync.composenavigation
+package com.drsync.composenavigation.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.drsync.composenavigation.navigation.Screen
 
 @Composable
 fun HomeScreen(navController: NavController) {

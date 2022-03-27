@@ -7,6 +7,10 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.drsync.composenavigation.navigation.ID_DETAIL
+import com.drsync.composenavigation.navigation.NAME_DETAIL
+import com.drsync.composenavigation.navigation.Screen
+import com.drsync.composenavigation.screens.HomeScreen
 
 @Composable
 fun SetupNavGraph(

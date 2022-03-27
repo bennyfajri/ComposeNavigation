@@ -1,4 +1,4 @@
-package com.drsync.composenavigation
+package com.drsync.composenavigation.navigation
 
 sealed class Screen(val  route: String){
     object Home: Screen(route = "home_screen")
