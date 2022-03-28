@@ -1,29 +1,26 @@
-package com.drsync.composenavigation
+package com.drsync.composenavigation.navigation.nav_graph
 
 import android.util.Log
-import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
+import androidx.navigation.*
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
+import com.drsync.composenavigation.screens.DetailScreen
+import com.drsync.composenavigation.navigation.HOME_ROUTE
 import com.drsync.composenavigation.navigation.ID_DETAIL
 import com.drsync.composenavigation.navigation.NAME_DETAIL
 import com.drsync.composenavigation.navigation.Screen
 import com.drsync.composenavigation.screens.HomeScreen
 
-@Composable
-fun SetupNavGraph(
-    navHostController: NavHostController
+fun NavGraphBuilder.homeNavGraph(
+    navController: NavController
 ) {
-    NavHost(
-        navController = navHostController,
-        startDestination = Screen.Home.route
+    navigation(
+        startDestination = Screen.Home.route,
+        route = HOME_ROUTE
     ) {
         composable(
             route = Screen.Home.route
         ) {
-            HomeScreen(navController = navHostController)
+            HomeScreen(navController = navController)
         }
         composable(
             route = Screen.Detail.route,
@@ -40,7 +37,7 @@ fun SetupNavGraph(
         ) {
             Log.d("Args", it.arguments?.getInt(ID_DETAIL).toString())
             Log.d("Args", it.arguments?.getString(NAME_DETAIL).toString())
-            DetailScreen(navController = navHostController)
+            DetailScreen(navController = navController)
         }
     }
 }

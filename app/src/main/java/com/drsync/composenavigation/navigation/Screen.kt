@@ -3,10 +3,6 @@ package com.drsync.composenavigation.navigation
 sealed class Screen(val  route: String){
     object Home: Screen(route = "home_screen")
     object Detail: Screen(route = "detail_screen?id={$ID_DETAIL}&name={$NAME_DETAIL}") {
-//        fun passId(id: Int = 0): String {
-//            return "detail_screen?id=$id"
-//        }
-
         fun passNameAndId(
             id: Int = 0,
             name: String = "Benny Fajri"
@@ -14,6 +10,8 @@ sealed class Screen(val  route: String){
             return "detail_screen?id=$id&name=$name"
         }
     }
+    object Login: Screen(route = "login_screen")
+    object SignUp: Screen(route = "sign_up_screen")
 
 
     /** REQUIRED ARGUMENTS */
@@ -32,3 +30,7 @@ sealed class Screen(val  route: String){
 
 const val ID_DETAIL = "id"
 const val NAME_DETAIL = "name"
+
+const val AUTHENTICATION_ROUTE = "authentication"
+const val HOME_ROUTE = "home"
+const val ROOT_ROUTE = "root"

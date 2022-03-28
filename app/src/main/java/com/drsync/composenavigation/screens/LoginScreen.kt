@@ -16,6 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.drsync.composenavigation.navigation.HOME_ROUTE
+import com.drsync.composenavigation.navigation.Screen
 
 @Composable
 fun LoginScreen(
@@ -32,7 +34,7 @@ fun LoginScreen(
             fontWeight = FontWeight.Bold,
             color = Color.Magenta,
             modifier = Modifier.clickable {
-
+                navController.navigate(Screen.SignUp.route)
             }
         )
         Text(
@@ -40,9 +42,21 @@ fun LoginScreen(
             modifier = Modifier
                 .padding(top = 20.dp)
                 .clickable {
-
+                    navController.navigate(HOME_ROUTE) {
+                        popUpTo(HOME_ROUTE)
+                    }
                 },
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.Medium,
+            fontSize = MaterialTheme.typography.h6.fontSize
+        )
+        Text(
+            text = "Go To Detail screen",
+            modifier = Modifier
+                .clickable {
+                    navController.popBackStack()
+                    navController.navigate(Screen.Detail.passNameAndId())
+                },
+            fontWeight = FontWeight.Medium,
             fontSize = MaterialTheme.typography.h6.fontSize
         )
     }

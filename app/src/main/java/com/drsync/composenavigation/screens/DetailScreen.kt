@@ -1,4 +1,4 @@
-package com.drsync.composenavigation
+package com.drsync.composenavigation.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
