@@ -1,4 +1,4 @@
-package com.drsync.composenavigation
+package com.drsync.composenavigation.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -8,43 +8,35 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun SignUpScreen(
+    navController: NavController
+) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "Home",
-            color = MaterialTheme.colors.primary,
+            text = "Sign Up",
+            color = Color.Green,
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.clickable {
-                navController.navigate(
-                    route = Screen.Detail.passNameAndId(
-                        id = 69
-                    )
-
-                    /** REQUIRED ARGUMENTS */
-//                    route = Screen.Detail.passNameAndId(
-//                        10,
-//                        "Benny Fajri"
-//                    )
-                )
+                navController.popBackStack()
             }
         )
     }
+
 }
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreenPreview() {
-    HomeScreen(
-        navController = rememberNavController()
-    )
+fun SignUpPreview() {
+    SignUpScreen(navController = rememberNavController())
 }
